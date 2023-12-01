@@ -1,4 +1,5 @@
 "use client";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -6,14 +7,14 @@ import Image from "next/image";
 import Logo from "@/public/assets/logo.png";
 import Link from "next/link";
 const navigation = [
-  { name: "Skills", href: "#" },
-  { name: "Experience", href: "#" },
-  { name: "About", href: "#" },
+  { name: "Skills", href: "/skills" },
+  { name: "Projects", href: "/projects" },
+  { name: "About", href: "/about" },
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <header className="h-full bg-white">
       <nav
@@ -41,7 +42,8 @@ export default function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-base font-semibold leading-6 text-gray-900 link"
+              className={` ${pathname === item.href ? "active  " : "  link"}
+              text-base font-semibold leading-6 text-gray-900`}
             >
               {item.name}
             </Link>
