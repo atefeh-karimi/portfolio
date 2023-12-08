@@ -7,6 +7,7 @@ import Image from "next/image";
 import Logo from "@/public/assets/logo.png";
 import Link from "next/link";
 const navigation = [
+  { name: "Home", href: "/" },
   { name: "Skills", href: "/skills" },
   { name: "Projects", href: "/projects" },
   { name: "About", href: "/about" },
@@ -16,9 +17,9 @@ export default function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <header className="h-full bg-white">
+    <header className="h-full bg-white ">
       <nav
-        className="flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8"
+        className="flex items-center justify-between mx-auto max-w-7xl lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -42,8 +43,8 @@ export default function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className={` ${pathname === item.href ? "active  " : "  link"}
-              text-base font-semibold leading-6 text-gray-900`}
+              className={` ${pathname === item.href ? "active  " : "link"}
+              text-base font-semibold leading-6 text-gray-900 cursor-pointer`}
             >
               {item.name}
             </Link>
@@ -79,7 +80,7 @@ export default function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg hover:bg-gray-50"
+                    className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg cursor-pointer hover:bg-gray-50"
                   >
                     {item.name}
                   </Link>
