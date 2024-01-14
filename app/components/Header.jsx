@@ -6,20 +6,40 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Logo from "@/public/assets/logo.png";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Skills", href: "/skills" },
-  { name: "Projects", href: "/projects" },
-  { name: "About", href: "/about" },
+  { name: "home", href: "/" },
+  { name: "skills", href: "/skills" },
+  { name: "projects", href: "/projects" },
+  { name: "about", href: "/about" },
 ];
 
 export default function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+  const langs = {
+    en: { name: "en" },
+    fa: { name: "fa" },
+  };
+
   return (
-    <header className="h-full bg-white ">
+    <header className="w-full pr-3 bg-transparent lg:pr-0">
+      <div className="flex items-center justify-center gap-5 pt-5">
+        {Object.keys(langs).map((lang) => (
+          <button
+            type="submit"
+            key={lang}
+            onClick={() => i18n.changeLanguage(lang)}
+            disabled={i18n.resolvedLanguage === lang}
+            className="disabled:text-gray-400"
+          >
+            {t(langs[lang].name)}
+          </button>
+        ))}
+      </div>
       <nav
-        className="flex items-center justify-between mx-auto max-w-7xl lg:px-8"
+        className="flex items-center justify-between w-full mx-auto max-w-7xl lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -46,7 +66,7 @@ export default function Header() {
               className={` ${pathname === item.href ? "active  " : "link"}
               text-base font-semibold leading-6 text-gray-900 cursor-pointer`}
             >
-              {item.name}
+              {t(item.name)}
             </Link>
           ))}
         </div>
@@ -57,7 +77,7 @@ export default function Header() {
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
-        <div className="fixed inset-0 z-10" />
+        <div className="fixed inset-0 z-10 bg-red-500" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full px-6 py-6 overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
@@ -66,7 +86,7 @@ export default function Header() {
             </Link>
             <button
               type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              className="-m-1.5 rounded-md p-1.5 text-gray-700"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
@@ -75,11 +95,12 @@ export default function Header() {
           </div>
           <div className="flow-root mt-6">
             <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="py-6 space-y-2">
+              <div className="py-6 ">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
                     className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg cursor-pointer hover:bg-gray-50"
                   >
                     {item.name}

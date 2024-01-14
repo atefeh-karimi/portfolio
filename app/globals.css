@@ -45,6 +45,7 @@
   color: #ff80b5;
   background-image: linear-gradient(to right, #ff80b5, #9089fc);
   -webkit-background-clip: text;
+  background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;

@@ -19,6 +19,7 @@ const skills = [
   "linux",
   "vscode",
   "figma",
+  "antd",
 ];
 
 const container = {
@@ -42,7 +43,7 @@ const item = {
 };
 export default function Skills() {
   return (
-    <div className="p-6 mx-auto max-w-7xl lg:px-8 scroll-smooth">
+    <div className="p-6 mx-auto max-w-7xl lg:px-8 scroll-smooth ">
       <div className="relative pt-16 bg-white isolate">
         <div
           className="absolute inset-x-0 top-0 flex pt-32 overflow-hidden opacity-25 -z-10 transform-gpu blur-3xl sm:pt-40 xl:justify-end"
@@ -58,13 +59,13 @@ export default function Skills() {
         </div>
       </div>
 
-      <div className="">
+      <div className="lg:mt-44">
         <motion.ul
           variants={container}
           initial="hidden"
           animate="visible"
           role="list"
-          className="container grid grid-cols-2 place-content-center gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-8 xl:gap-x-8"
+          className="container grid grid-cols-2  place-content-center gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-8 xl:gap-x-8"
         >
           {skills.map((file, Idx) => (
             <motion.li key={file + Idx} className="item" variants={item}>
@@ -75,7 +76,7 @@ export default function Skills() {
                   width="0"
                   height="0"
                   sizes="100vw"
-                  className="object-contain w-full h-full py-1 pointer-events-none "
+                  className="object-contain h-2/3 w-2/3 lg:w-full lg:h-full py-1 pointer-events-none "
                 />
               </div>
             </motion.li>
