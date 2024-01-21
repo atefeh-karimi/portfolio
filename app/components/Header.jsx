@@ -6,38 +6,18 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Logo from "@/public/assets/logo.png";
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
 const navigation = [
-  { name: "home", href: "/" },
-  { name: "skills", href: "/skills" },
-  { name: "projects", href: "/projects" },
-  { name: "about", href: "/about" },
+  { name: "Home", href: "/" },
+  { name: "Skills", href: "/skills" },
+  { name: "Projects", href: "/projects" },
+  { name: "About", href: "/about" },
 ];
 
 export default function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { t, i18n } = useTranslation();
-  const langs = {
-    en: { name: "en" },
-    fa: { name: "fa" },
-  };
-
   return (
     <header className="w-full pr-3 bg-transparent lg:pr-0">
-      <div className="flex items-center justify-center gap-5 pt-5">
-        {Object.keys(langs).map((lang) => (
-          <button
-            type="submit"
-            key={lang}
-            onClick={() => i18n.changeLanguage(lang)}
-            disabled={i18n.resolvedLanguage === lang}
-            className="disabled:text-gray-400"
-          >
-            {t(langs[lang].name)}
-          </button>
-        ))}
-      </div>
       <nav
         className="flex items-center justify-between w-full mx-auto max-w-7xl lg:px-8"
         aria-label="Global"
@@ -66,7 +46,7 @@ export default function Header() {
               className={` ${pathname === item.href ? "active  " : "link"}
               text-base font-semibold leading-6 text-gray-900 cursor-pointer`}
             >
-              {t(item.name)}
+              {item.name}
             </Link>
           ))}
         </div>
