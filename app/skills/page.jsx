@@ -59,13 +59,13 @@ export default function Skills() {
         </div>
       </div>
 
-      <div className="lg:mt-44">
+      <div className="2xl:mt-44">
         <motion.ul
           variants={container}
           initial="hidden"
           animate="visible"
           role="list"
-          className="container grid grid-cols-2  place-content-center gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-8 xl:gap-x-8"
+          className="container grid grid-cols-2 mx-auto place-content-center gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-8 xl:gap-x-8"
         >
           {skills.map((file, Idx) => (
             <motion.li key={file + Idx} className="item" variants={item}>
@@ -76,7 +76,7 @@ export default function Skills() {
                   width="0"
                   height="0"
                   sizes="100vw"
-                  className="object-contain h-2/3 w-2/3 lg:w-full lg:h-full py-1 pointer-events-none "
+                  className="object-contain w-2/3 py-1 pointer-events-none h-2/3 lg:w-full lg:h-full "
                 />
               </div>
             </motion.li>
