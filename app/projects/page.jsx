@@ -9,10 +9,11 @@ const projects = [
   {
     id: 1,
     image: "danaboom-desk-en",
-    description: "description1",
+    description:
+      "As the sole front-end developer for the International Student Portal, I orchestrated the development of multi-panels catering to students, university staff, and agency members. Using React.js and Tailwind CSS,Headlessui, I ensured an intuitive and fully responsive user interface that seamlessly switched between two languages. My focus also extended to optimizing user interactions on public pages, like the dynamic search interface, to provide a seamless and user-friendly experience for individuals worldwide exploring educational opportunities.",
     name: "Danaboom",
     githubUrl: "",
-    webUrl: "",
+    webUrl: "https://danaboom.com/",
   },
   {
     id: 2,
@@ -25,18 +26,20 @@ const projects = [
   {
     id: 2,
     image: "baki-desk",
-    description: "description2",
+    description:
+      "As the primary front-end developer for our immigration connection platform, I utilized Next.js and integrated the Ant Design framework to create a user-friendly interface. The project connects individuals planning immigration with experienced influencers and immigration companies. Using multi-panels tailored for influencers, companies, and customers, the platform incorporates a powerful calendar system (Big Calendar) for scheduling sessions and booking consultations. This dynamic environment facilitates seamless interactions, allowing influencers and immigration companies to offer valuable guidance to individuals embarking on their immigration journey.",
     name: "Baki",
     githubUrl: "",
-    webUrl: "",
+    webUrl: "https://ba-ki.com/",
   },
   {
     id: 3,
     image: "store",
-    description: "description2",
+    description:
+      "As the sole developer for my personal store project, I employed Next.js and integrated Tailwind CSS to craft a sleek and responsive user interface. The store features essential components like a cart, a searchable product list, and a user-friendly login page. With a focus on user experience, the project seamlessly combines Next.js functionalities with Tailwind CSS styling, creating an intuitive environment for customers to browse, search, and manage their purchases effortlessly.",
     name: "Store",
-    githubUrl: "",
-    webUrl: "",
+    githubUrl: "https://github.com/atefeh-karimi/store-nextjs",
+    webUrl: "https://store-nextjs.atefehkarimikia.ir/",
   },
 ];
 const container = {
@@ -81,12 +84,12 @@ export default function Projects() {
           initial="hidden"
           animate="visible"
           role="list"
-          className="grid grid-cols-1 mt-6 bg-white gap-x-8 gap-y-16 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3"
+          className="grid grid-cols-1 mt-6 gap-x-8 gap-y-16 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3"
         >
           {projects.map((project) => (
             <motion.li
               key={project.id}
-              className="relative w-full h-full bg-white border rounded-lg shadow-lg group"
+              className="relative w-full h-full border rounded-lg shadow-lg group"
               variants={item}
             >
               <div className="w-full overflow-hidden shadow-sm h-60 ">
@@ -99,24 +102,38 @@ export default function Projects() {
                   className="object-center w-full h-full rounded-t-lg "
                 />
               </div>
-              <div className="flex flex-col px-2 py-4 text-base font-medium text-gray-900 bg-white border">
-                <h3>{project.name}</h3>
-                <p className="mt-1 text-sm text-gray-500">
-                  {project.description}
-                </p>
-                <div className="flex items-center gap-4 mt-3">
-                  <Link href="">
-                    <GlobeAltIcon className="w-7 h-7" />
-                  </Link>
-                  <Link href="">
-                    <Image
-                      src={GitHubIcon}
-                      width="0"
-                      height="0"
-                      alt="github-icon"
-                      className="w-6 h-6"
-                    />
-                  </Link>
+              <div className="flex flex-col justify-between px-4 py-4 text-base font-medium text-gray-900 border h-[500px]">
+                <div>
+                  <h3 className="text-lg font-semibold">{project.name}</h3>
+                  <p className="mt-1 leading-relaxed text-justify text-gray-500 text-md">
+                    {project.description}
+                  </p>
+                </div>
+                <div className="flex items-center gap-3 pb-3">
+                  {project?.githubUrl && (
+                    <Link
+                      href={project.githubUrl}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <Image
+                        src={GitHubIcon}
+                        width="0"
+                        height="0"
+                        alt="github-icon"
+                        className="w-6 h-6"
+                      />
+                    </Link>
+                  )}
+                  {project?.webUrl && (
+                    <Link
+                      href={project.webUrl}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <GlobeAltIcon className="w-7 h-7" />
+                    </Link>
+                  )}
                 </div>
               </div>
             </motion.li>
