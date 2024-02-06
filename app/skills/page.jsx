@@ -65,7 +65,7 @@ export default function Skills() {
           initial="hidden"
           animate="visible"
           role="list"
-          className="container grid grid-cols-2 mx-auto place-content-center gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-8 xl:gap-x-8"
+          className="container grid items-center grid-cols-2 mx-auto justify-items-center place-content-center gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-8 xl:gap-x-8"
         >
           {skills.map((file, Idx) => (
             <motion.li key={file + Idx} className="item" variants={item}>
