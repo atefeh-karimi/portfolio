@@ -2,12 +2,12 @@ import React from "react";
 import AboutImage from "@/public/assets/about/about.jpeg";
 import GmailIcon from "@/public/assets/about/gmail.png";
 import LinkdinIcon from "@/public/assets/about/linkdin.png";
+import GitHubIcon from "@/public/assets/skills/github.png";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function About() {
   return (
-    <div className="mx-auto  max-w-7xl lg:px-8 scroll-smooth">
+    <div className="mx-auto max-w-7xl lg:px-8 scroll-smooth">
       <div className="relative pt-16 bg-white isolate">
         <div
           className="absolute inset-x-0 top-0 flex pt-32 overflow-hidden opacity-25 -z-10 transform-gpu blur-3xl sm:pt-40 xl:justify-end"
@@ -22,7 +22,7 @@ export default function About() {
           />
         </div>
       </div>
-      <div className="absolute px-4 mx-auto">
+      <div className="absolute px-4 pt-8 mx-auto">
         <div className="justify-between w-full gap-9 items-cente lg:flex">
           <div className="h-full rounded-lg lg:w-1/3">
             <Image
@@ -67,7 +67,7 @@ export default function About() {
                 href="https://github.com/atefeh-karimi"
                 className="cursor-pointer"
               >
-                <Image src={GmailIcon} alt="gmail" className="h-8 w-7 " />
+                <Image src={GitHubIcon} alt="gmail" className="h-8 w-7 " />
               </a>
             </div>
           </div>
