@@ -4,12 +4,12 @@ import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import NotFoundAnim from "@/public/assets/not-found.json";
 export default function NotFound() {
   return (
-    <div className="container min-h-full mx-auto mb-8 max-w-7xl lg:px-8">
+    <div className="container flex flex-col items-center justify-center max-w-2xl min-h-full mx-auto mb-8 lg:max-w-7xl lg:px-8">
       <Player
         autoplay
         loop
         src={NotFoundAnim}
-        style={{ height: "800px", width: "800px" }}
+        className="lg:w-[800px] lg:h-[800px]"
       >
         <Controls visible={false} />
       </Player>
