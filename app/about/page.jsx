@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <div className="mx-auto max-w-7xl lg:px-8 scroll-smooth">
+    <div className="container mx-auto lg:px-8">
       <div className="relative pt-16 bg-white isolate">
         <div
           className="absolute inset-x-0 top-0 flex pt-32 overflow-hidden opacity-25 -z-10 transform-gpu blur-3xl sm:pt-40 xl:justify-end"
@@ -23,19 +23,19 @@ export default function About() {
         </div>
       </div>
       <div className="absolute px-4 pt-8 mx-auto">
-        <div className="justify-between w-full gap-9 items-cente lg:flex">
+        <div className="justify-between w-full h-full gap-9 items-cente lg:flex">
           <div className="h-full rounded-lg lg:w-1/3">
             <Image
               alt="about-me-image"
               src={AboutImage}
               width="0"
               height="0"
-              sizes="100wh"
               className="w-full h-full rounded-lg"
             />
           </div>
-          <div className="h-full py-3 pt-10 text-justify lg:w-2/3">
+          <div className="h-full py-3 text-justify xl:pt-10 lg:w-2/3">
             <h1 className="mb-3 font-bold">About Me</h1>
+            {/* desc */}
             <p className="inline-block lg:w-2/3">
               I'm a passionate front-end developer with over a year of hands-on
               experience, specializing in React.js and Next.js. Armed with a
@@ -45,30 +45,52 @@ export default function About() {
               continuously expanding my skill set to tackle new challenges and
               deliver exceptional user experiences.
             </p>
-
-            <div className="flex items-center gap-3 mt-4">
-              <a
-                target="_blank"
-                rel="noopener noreferre"
-                href="https://www.linkedin.com/in/atefeh-karimi-kia/"
-              >
-                <Image src={LinkdinIcon} alt="linkdin" className="w-7 h-7" />
-              </a>
-
-              <a
-                href="mailto:atefeh.karimi.kia@gmail.com"
-                className="cursor-pointer"
-              >
-                <Image src={GmailIcon} alt="gmail" className="h-8 w-7 " />
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferre"
-                href="https://github.com/atefeh-karimi"
-                className="cursor-pointer"
-              >
-                <Image src={GitHubIcon} alt="gmail" className="h-8 w-7 " />
-              </a>
+            <div>
+              {/* social */}
+              <div className="flex flex-col gap-4 ">
+                {/* resume */}
+                <a
+                  href="/assets/atefeh-karimi-kia-resume.pdf"
+                  target="_blank"
+                  className="download-button"
+                >
+                  DOWNLOAD RESUME
+                </a>
+                <div className="flex items-center gap-3 ml-1">
+                  <a
+                    title="linkedin"
+                    target="_blank"
+                    rel="noopener noreferre"
+                    href="https://www.linkedin.com/in/atefeh-karimi-kia/"
+                  >
+                    <Image
+                      src={LinkdinIcon}
+                      alt="linkdin"
+                      className="rounded-md w-7 h-7"
+                    />
+                  </a>
+                  <a
+                    title="gmail"
+                    href="mailto:atefeh.karimi.kia@gmail.com"
+                    className="rounded-md cursor-pointer"
+                  >
+                    <Image
+                      src={GmailIcon}
+                      alt="gmail"
+                      className="h-8 rounded-md w-7"
+                    />
+                  </a>
+                  <a
+                    target="_blank"
+                    title="github"
+                    rel="noopener noreferre"
+                    href="https://github.com/atefeh-karimi"
+                    className=""
+                  >
+                    <Image src={GitHubIcon} alt="github" className="h-8 w-7 " />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
