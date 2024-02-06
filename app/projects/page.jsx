@@ -3,45 +3,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
-import GitHubIcon from "@/public/assets/projects/github.svg";
+import GitHubIcon from "@/public/assets/skills/github.png";
 import Link from "next/link";
-const projects = [
-  {
-    id: 1,
-    image: "danaboom-desk-en",
-    description:
-      "As the sole front-end developer for the International Student Portal, I orchestrated the development of multi-panels catering to students, university staff, and agency members. Using React.js and Tailwind CSS,Headlessui, I ensured an intuitive and fully responsive user interface that seamlessly switched between two languages. My focus also extended to optimizing user interactions on public pages, like the dynamic search interface, to provide a seamless and user-friendly experience for individuals worldwide exploring educational opportunities.",
-    name: "Danaboom",
-    githubUrl: "",
-    webUrl: "https://danaboom.com/",
-  },
-  {
-    id: 2,
-    image: "iconnect-desk",
-    description: "description2",
-    name: "Iconnect",
-    githubUrl: "",
-    webUrl: "",
-  },
-  {
-    id: 2,
-    image: "baki-desk",
-    description:
-      "As the primary front-end developer for our immigration connection platform, I utilized Next.js and integrated the Ant Design framework to create a user-friendly interface. The project connects individuals planning immigration with experienced influencers and immigration companies. Using multi-panels tailored for influencers, companies, and customers, the platform incorporates a powerful calendar system (Big Calendar) for scheduling sessions and booking consultations. This dynamic environment facilitates seamless interactions, allowing influencers and immigration companies to offer valuable guidance to individuals embarking on their immigration journey.",
-    name: "Baki",
-    githubUrl: "",
-    webUrl: "https://ba-ki.com/",
-  },
-  {
-    id: 3,
-    image: "store",
-    description:
-      "As the sole developer for my personal store project, I employed Next.js and integrated Tailwind CSS to craft a sleek and responsive user interface. The store features essential components like a cart, a searchable product list, and a user-friendly login page. With a focus on user experience, the project seamlessly combines Next.js functionalities with Tailwind CSS styling, creating an intuitive environment for customers to browse, search, and manage their purchases effortlessly.",
-    name: "Store",
-    githubUrl: "https://github.com/atefeh-karimi/store-nextjs",
-    webUrl: "https://store-nextjs.atefehkarimikia.ir/",
-  },
-];
+import { projects } from "@/public/assets/data";
 const container = {
   hidden: { opacity: 1, scale: 0 },
   visible: {
@@ -63,8 +27,8 @@ const item = {
 };
 export default function Projects() {
   return (
-    <div className="p-6 mx-auto max-w-7xl lg:px-8">
-      <div className="relative pt-16 bg-white isolate ">
+    <div className="mx-auto max-w-7xl lg:px-8">
+      <div className="relative pt-8 bg-white isolate ">
         <div
           className="absolute inset-x-0 top-0 flex pt-10 overflow-hidden opacity-25 -z-10 transform-gpu blur-3xl sm:pt-40 xl:justify-end"
           aria-hidden="true"
@@ -84,7 +48,7 @@ export default function Projects() {
           initial="hidden"
           animate="visible"
           role="list"
-          className="grid grid-cols-1 mt-6 gap-x-8 gap-y-16 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3"
+          className="grid grid-cols-1 px-4 mt-6 0lg:px- gap-x-8 gap-y-16 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3"
         >
           {projects.map((project) => (
             <motion.li

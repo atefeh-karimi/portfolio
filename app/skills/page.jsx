@@ -2,25 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-
-const skills = [
-  "javascript",
-  "react",
-  "nextjs",
-  "nodejs",
-  "html",
-  "css",
-  "sass",
-  "mui",
-  "bootstrap",
-  "tailwind",
-  "git",
-  "github1",
-  "linux",
-  "vscode",
-  "figma",
-  "antd",
-];
+import { skills } from "@/public/assets/data";
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
