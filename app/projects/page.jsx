@@ -42,7 +42,7 @@ export default function Projects() {
           />
         </div>
       </div>
-      <div className="2xl:mt-44">
+      <div className="mb-20 2xl:mt-44">
         <motion.ul
           variants={container}
           initial="hidden"
@@ -56,7 +56,8 @@ export default function Projects() {
               className="relative w-full h-full border rounded-lg shadow-lg group"
               variants={item}
             >
-              <div className="w-full overflow-hidden shadow-sm h-60 ">
+              {/* image */}
+              <div className="w-full shadow-sm h-60 ">
                 <Image
                   src={`/assets/projects/${project.image}.png`}
                   alt=""
@@ -66,14 +67,16 @@ export default function Projects() {
                   className="object-center w-full h-full rounded-t-lg "
                 />
               </div>
-              <div className="flex flex-col justify-between px-4 py-4 text-base font-medium text-gray-900 border h-[500px]">
+              {/* description */}
+              <div className="flex flex-col px-4 py-4 text-base font-medium text-gray-900 border ">
                 <div>
                   <h3 className="text-lg font-semibold">{project.name}</h3>
-                  <p className="mt-1 leading-relaxed text-justify text-gray-500 text-md">
+                  <p className="mt-1 leading-relaxed text-justify text-gray-500 h-60 text-md">
                     {project.description}
                   </p>
                 </div>
-                <div className="flex items-center gap-3 pb-3">
+                {/* social */}
+                <div className="flex items-center gap-3 mt-8">
                   {project?.githubUrl && (
                     <Link
                       href={project.githubUrl}
