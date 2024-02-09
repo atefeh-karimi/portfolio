@@ -27,14 +27,7 @@ export const projects = [
     githubUrl: "",
     webUrl: "https://danaboom.com/",
   },
-  {
-    id: 2,
-    image: "iconnect-desk",
-    description: "description2",
-    name: "Iconnect",
-    githubUrl: "",
-    webUrl: "",
-  },
+
   {
     id: 2,
     image: "baki-desk",
@@ -52,5 +45,14 @@ export const projects = [
     name: "Store",
     githubUrl: "https://github.com/atefeh-karimi/store-nextjs",
     webUrl: "https://store-nextjs.atefehkarimikia.ir/",
+  },
+  {
+    id: 4,
+    image: "education-school",
+    description:
+      "An experimental project that I inspired by a Youtube tutorial, and in following up, I translated it into Persian and changed its layout to RTL using React, React Router, Styled-components and responsive design.",
+    name: "Education School Website",
+    githubUrl: "https://github.com/atefeh-karimi/education-school-react",
+    webUrl: "https://atefeh-karimi.github.io/education-school-react",
   },
 ];
