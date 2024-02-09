@@ -37,9 +37,9 @@ export default function About() {
             <h1 className="mb-3 font-bold">About Me</h1>
             {/* desc */}
             <p className="inline-block lg:w-2/3">
-              I'm a passionate front-end developer with over a year of hands-on
-              experience, specializing in React.js and Next.js. Armed with a
-              solid educational foundation in information technology
+              I&apos;m a passionate front-end developer with over a year of
+              hands-on experience, specializing in React.js and Next.js. Armed
+              with a solid educational foundation in information technology
               engineering, I am driven by a relentless pursuit of knowledge and
               innovation. As a self-learner, I thrive in dynamic environments,
               continuously expanding my skill set to tackle new challenges and
